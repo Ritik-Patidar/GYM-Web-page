@@ -11,62 +11,82 @@
 <style>
     body {
         font-family: 'Baloo Bhai 2', cursive;
+        height: 100%;
         color: white;
         margin: 0px;
-        padding: 0px;
-        background: url('BG 2.jpg');
-        
+        background-color: lightblue;
+        background-image: url("BG 2.jpg");
     }
 
     .left {
         display: inline-block;
         /* border: 2px solid red; */
-        position: absolute;
-        left: 34px;
-        top: 20px;
+        position: fixed;
+        top: 0;
+        width: 20% ;
+        height: 65px;
+        background-color: black;
+        z-index: 1;
     }
 
     .left img {
         width: 100px;
-    }
-
-    .mid {
-        display: block;
-        width: 45%;
-        margin: 18px auto;
-        /* border: 2px solid green; */
-    }
-
-    .right {
-        position: absolute;
-        right: 34px;
-        top: 43px;
-        display: inline-block;
-        /* border: 2px solid blue; */
+        margin-left: 95px;
     }
 
     .navbar {
-        display: inline-block;
+        position: fixed;
+        left: 20%;
+        top: 0px;
+        width: 80% ;
+        background-color: black;
+        z-index: 1;
     }
 
-    .navbar li {
+    .navbar a {
+        float: left;
         color: white;
-        display: inline-block;
-        /* font-weight: 25px; */
         font-size: 20px;
-        ;
-    }
-
-    .navbar li a {
-        color: white;
         text-decoration: none;
-        padding: 34px 20px;
+        padding: 16px 60px;
+        text-decoration: none;
+
     }
 
-    .navbar li a:hover,
-    .navbar li a.active {
-        text-decoration: underline;
-        color: grey;
+    .active {
+        background-color: red;
+    }
+
+    .navbar a:hover {
+        background-color: gray;
+        color: black;
+    }
+
+    .dropdown {
+        float: left ;
+        margin: 0;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 65px ;
+        background-color: white;
+        max-width: 182px ;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 12px;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
 
     .btn {
@@ -87,7 +107,7 @@
     .container {
         font-family: 'Baloo Bhai 2', cursive;
         /* border: 2px solid white; */
-        margin: 5% auto;
+        margin: 162px auto;
         padding: 18px;
         width: 33%;
         border-radius: 25px;
@@ -107,7 +127,7 @@
 
     .feet input {
         position: absolute;
-        left: 562px;
+        left: 495px;
         top: 324px;
         text-align: center;
         display: block;
@@ -122,7 +142,7 @@
 
     .inches input {
         position: absolute;
-        right: 564px;
+        right: 495px;
         top: 324px;
         text-align: center;
         display: block;
@@ -169,15 +189,19 @@
 
     table {
         border-collapse: collapse;
+        color: white;
+        font-size: 20px;
         width: 50%;
         position: absolute;
         left: 400px;
+        top: 570px;
+        z-index: -1;
     }
 
     th,td {
         padding: 8px;
         text-align: left;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid rgb(75, 75, 75);
     }
 </style>
 
@@ -186,23 +210,17 @@
         <div class="left">
             <img src="logo 1.png" alt="">
         </div>
-        <div class="mid">
-            <ul class="navbar">
-                <li><a href="Home page.html">Home</a></li>
-                <li><a href="#">About Us</a></li>
-               <div class="navbar fitness">
-                    <li><a href="#" class="active">Fitness Calculator</a></li>
-                    <div class="content">
+        <div class="navbar">
+                <a href="Home page.html">Home</a>
+                <a href="#">About Us</a>
+               <div class="dropdown">
+                    <a href="#" class="active">Fitness Calculator</a>
+                    <div class="dropdown-content">
                         <a href="#" class="active">BMI Calculator</a>
                         <a href="#">Calorie Calculator</a>
                     </div>
                 </div>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="right">
-            <button class="btn">Call Now</button>
-            <button class="btn">E-mail Us</button>
+                <a href="#">Contact Us</a>
         </div>
     </header>
     <div class="container">
